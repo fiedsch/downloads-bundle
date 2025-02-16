@@ -1,0 +1,25 @@
+{
+  "name": "fiedsch/downloads-bundle",
+  "type": "contao-bundle",
+  "description": "Downloads by Token",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Andreas Fieger",
+      "email": "ev@andreas-fieger.de",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.3",
+    "contao/core-bundle": "^5.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Fiedsch\\DownloadsBundle\\": "src/"
+    }
+  },
+  "extra": {
+    "contao-manager-plugin": "Fiedsch\\DownloadsBundle\\ContaoManager\\Plugin"
+  }
+}
