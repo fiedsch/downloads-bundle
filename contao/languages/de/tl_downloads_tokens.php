@@ -4,6 +4,8 @@ $table = 'tl_downloads_tokens';
 
 $GLOBALS['TL_LANG'][$table]['token_legend'] = 'Token';
 
+$GLOBALS['TL_LANG'][$table]['headline_legend'] = 'Überschrift';
+
 $GLOBALS['TL_LANG'][$table]['files_legend'] = 'Download-Dateien';
 
 $GLOBALS['TL_LANG'][$table]['publish_legend'] = 'Veröffentlichung';
