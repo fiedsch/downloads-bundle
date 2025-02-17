@@ -71,7 +71,7 @@ class TokenDownloadsController extends AbstractContentElementController
         }
         $template->content = $contentElement->generate();
 
-        $this->logAccess($downloadsTokensModel);
+        $this->logAccess($downloadsTokensModel, $request);
 
         return $template->getResponse();
     }
@@ -111,8 +111,12 @@ class TokenDownloadsController extends AbstractContentElementController
         return $contentModel;
     }
 
-    private function logAccess(DownloadsTokensModel $downloadsTokensModel): void
+    private function logAccess(DownloadsTokensModel $downloadsTokensModel, Request $request): void
     {
+        if ($this->isDownloadRequest($request)) {
+            return;
+        }
+
         $statusText = $this->generateStatusText($downloadsTokensModel);
         $contaoLogActionParameter = $downloadsTokensModel->isHidden() ? ContaoContext::ERROR : ContaoContext::GENERAL;
         $contaoLogActionMethod = $downloadsTokensModel->isHidden() ? 'error' : 'info';
@@ -166,6 +170,11 @@ class TokenDownloadsController extends AbstractContentElementController
         }
 
         return 'OK';
+    }
+
+    private function isDownloadRequest(Request $request): bool
+    {
+        return $request->query->has('file');
     }
 
 }
