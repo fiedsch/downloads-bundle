@@ -21,10 +21,10 @@ use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-#[AsContentElement(category: 'files', type: TokenDownloadsController::TYPE)]
+#[AsContentElement(type: TokenDownloadsController::TYPE, category: 'files')]
 class TokenDownloadsController extends AbstractContentElementController
 {
-    const TYPE = 'token_downloads';
+    const string TYPE = 'token_downloads';
 
     public function __construct(
         private readonly ScopeMatcher $scopeMatcher,
@@ -121,7 +121,7 @@ class TokenDownloadsController extends AbstractContentElementController
         $contaoLogActionParameter = $downloadsTokensModel->isHidden() ? ContaoContext::ERROR : ContaoContext::GENERAL;
         $contaoLogActionMethod = $downloadsTokensModel->isHidden() ? 'error' : 'info';
 
-        // Zugriffe mitzählen
+        // Zugriffe mitzählen (protokollieren)
         $downloadsTokensModel->access_log = sprintf("%s;%s\n%s",
             Date::parse('Y-m-d, H:i', time()),
             $statusText,
