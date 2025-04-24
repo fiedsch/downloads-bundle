@@ -91,7 +91,7 @@ class TokenDownloadsController extends AbstractContentElementController
         // Note: we need to override these values as otherwise our message would also not be shown :-o)
         $contentModel->start = '';
         $contentModel->stop = '';
-        $contentModel->published = true;
+        $contentModel->published = true; // FIXME tl_content uses 'invisible' true/false
         // TODO: do not use hard coded class here!
         $contentModel->text = sprintf('<p class="alert alert-error">Ihre Downloads %s!</p>', $this->generateIsHiddenMessage($downloadsTokensModel));
 
@@ -103,7 +103,7 @@ class TokenDownloadsController extends AbstractContentElementController
         $contentModel = new ContentModel();
         $contentModel->headline = $downloadsTokensModel->headline;
         $contentModel->multiSRC = $downloadsTokensModel->multiSRC;
-        $contentModel->published = $downloadsTokensModel->published;
+        $contentModel->published = $downloadsTokensModel->published; // FIXME tl_content uses 'invisible' true/false
         $contentModel->start = $downloadsTokensModel->start;
         $contentModel->stop = $downloadsTokensModel->stop;
         // $contentModel->cssID = ['element-id', 'css-classes foo bar']; // could be used if we extend dca/tl_downloads_tokens.php to contai the required fields
