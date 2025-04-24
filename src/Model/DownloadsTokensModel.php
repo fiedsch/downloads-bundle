@@ -16,6 +16,7 @@ use Contao\System;
  * @property integer $start
  * @property integer $stop
  * @property boolean $published
+ * @property string $access_log
  *
  * @method static DownloadsTokensModel|null findPublishedByToken(string $token, array $opt=array())
  */
