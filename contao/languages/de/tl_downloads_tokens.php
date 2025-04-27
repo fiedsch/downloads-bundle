@@ -47,5 +47,5 @@ $GLOBALS['TL_LANG'][$table]['headline'] = [
 
 $GLOBALS['TL_LANG'][$table]['access_log'] = [
     'Zugriffe',
-    'Log der Zugriffe'
+    'Log der Zugriffe auf die Downloads-Seite. Für die Downloads der individuellen Dateien siehe Contao System-Log!'
 ];
