@@ -43,7 +43,7 @@ Darüber hinaus wird:
 Lege gerne ein Ticket an!
 
 
-## Roadmap (falle benötigt oder angefragt)
+## Roadmap (falls benötigt oder angefragt)
 
 * `tl_downloads_tokens` um ein Feld erweitern, das die Eingabe eines Texts ermöglicht (z.B. zum Download gehörender 
   individueller Erläuterungstext).
