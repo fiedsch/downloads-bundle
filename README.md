@@ -2,6 +2,7 @@
 
 Ein Downloads Inhaltselement, das dynamisch generiert und eingebaut wird.
 
+
 ## Use Case
 
 Du willst Downloads auf Deiner Site anbieten, die nicht im Menü verlinkt sind. Außerdem willst Du mehrere unterschiedliche 
@@ -36,7 +37,14 @@ Darüber hinaus wird:
     [response listener](https://docs.contao.org/dev/reference/hooks/postDownload/#body-inner) implementieren um dies
     selbst umzusetzen.
  
+
 ## Ideen und Anregungen
 
 Lege gerne ein Ticket an!
+
+
+## Roadmap (falle benötigt oder angefragt)
+
+* `tl_downloads_tokens` um ein Feld erweitern, das die Eingabe eines Texts ermöglicht (z.B. zum Download gehörender 
+  individueller Erläuterungstext).
 

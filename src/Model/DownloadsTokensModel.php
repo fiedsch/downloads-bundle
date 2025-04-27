@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Fiedsch\DownloadsBundle\Model;
 
 use Contao\Model;
-use Contao\System;
 
 /**
  * @property integer $id

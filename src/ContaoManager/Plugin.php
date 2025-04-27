@@ -14,6 +14,7 @@ class Plugin implements BundlePluginInterface
 {
     /**
      * {@inheritdoc}
+     * @noinspection PhpMissingReturnTypeInspection
      */
     public function getBundles(ParserInterface $parser)
     {
