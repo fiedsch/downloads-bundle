@@ -3,8 +3,11 @@
 declare(strict_types=1);
 
 use Contao\Config;
+use Contao\System;
 use Contao\DataContainer;
 use Contao\DC_Table;
+
+System::loadLanguageFile('tl_content');
 
 $GLOBALS['TL_DCA']['tl_downloads_tokens'] = [
 
@@ -36,7 +39,7 @@ $GLOBALS['TL_DCA']['tl_downloads_tokens'] = [
     ],
 
     'palettes' => [
-        'default' => '{token_legend},token;{headline_legend},headline;{files_legend},multiSRC;{publish_legend},published,start,stop;{access_legend},access_log',
+        'default' => '{token_legend},token;{headline_legend},headline;{files_legend},multiSRC,sortBy;{publish_legend},published,start,stop;{access_legend},access_log',
     ],
 
     'fields' => [
@@ -70,6 +73,15 @@ $GLOBALS['TL_DCA']['tl_downloads_tokens'] = [
             'inputType' => 'fileTree',
             'eval' => ['multiple'=>true, 'fieldType'=>'checkbox', 'isSortable' => true, 'files'=>true, 'isDownloads' => true, 'extensions' => Config::get('allowedDownload'), 'mandatory' => true],
             'sql' => "blob NULL",
+        ],
+
+        'sortBy' => [
+            'label'                   => &$GLOBALS['TL_LANG']['tl_content']['sortBy'],
+			'inputType'               => 'select',
+			'options'                 => array('custom', 'name_asc', 'name_desc', 'date_asc', 'date_desc', 'random'),
+			'reference'               => &$GLOBALS['TL_LANG']['tl_content'],
+			'eval'                    => array('tl_class'=>'w50 clr'),
+			'sql'                     => "varchar(32) COLLATE ascii_bin NOT NULL default ''"
         ],
 
         'published' => [

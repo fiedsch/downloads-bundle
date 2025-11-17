@@ -86,7 +86,6 @@ class TokenDownloadsController extends AbstractContentElementController
     {
         $contentModel = $this->getContentModel($downloadsTokensModel);
         $contentModel->type = 'downloads'; // is relevant for generating the ce_<type> CSS class
-        $contentModel->sortBy = 'custom';
 
         return new ContentDownloads($contentModel);
     }
@@ -116,6 +115,7 @@ class TokenDownloadsController extends AbstractContentElementController
         $contentModel = new ContentModel();
         $contentModel->headline = $downloadsTokensModel->headline;
         $contentModel->multiSRC = $downloadsTokensModel->multiSRC;
+        $contentModel->sortBy = $downloadsTokensModel->sortBy;
         $contentModel->invisible = false;
         $contentModel->start = $downloadsTokensModel->start;
         $contentModel->stop = $downloadsTokensModel->stop;
